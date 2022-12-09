@@ -1,0 +1,35 @@
+html {
+  height: 100%; // Липкий футер
+}
+
+body {
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Lato", "Arial", sans-serif;
+  word-break: break-word;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100%; // Липкий футер
+}
+
+main {
+  flex-grow: 1; // Липкий футер
+}
+
+picture {
+  display: block;
+  min-width: 100%;
+  height: auto;
+}
+
+img {
+  display: block;
+  object-fit: contain;
+}
+
+* {
+  box-sizing: border-box;
+}

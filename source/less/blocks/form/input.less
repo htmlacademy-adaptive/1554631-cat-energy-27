@@ -1,0 +1,115 @@
+[type="radio"]:checked + .input--radio {
+  background-color: #68b738;
+}
+
+[type="radio"]:focus-visible + .input--radio {
+  outline: 2px solid #000000;
+  outline-offset: 2px;
+}
+
+[type="checkbox"]:checked + .input--checkbox {
+  background-image: url("../img/form-img/svg/input-checkbox-icon.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+[type="checkbox"]:focus-visible + .input--checkbox {
+  outline: 2px solid #000000;
+  outline-offset: 2px;
+}
+
+.input {
+  max-width: 100%;
+  min-height: 45px;
+  padding: 0 20px;
+  font-family: "Oswald", "Arial", sans-serif;
+  color: #444444;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  border: 1px solid #d9d9d9;
+
+  &::placeholder {
+    color: #444444;
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    border: 1px solid #cdcdcd;
+  }
+
+  &:focus-visible {
+    outline: none;
+    border: 2px solid #000000;
+  }
+
+  &:invalid {
+    border: 2px solid #ff8282;
+  }
+
+  &::-webkit-inner-spin-button,
+  ::-webkit-outer-spin-button {
+    display: none;
+  }
+
+  &--radio {
+    width: 30px;
+    height: 30px;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border: 7px solid #ffffff;
+    box-shadow: 0 0 0 1px #dedede;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover {
+      border: 7px solid #ffffff;
+      box-shadow: 0 0 0 1px #cdcdcd;
+    }
+
+    &:active {
+      opacity: 0.3;
+      border: 7px solid #ffffff;
+      box-shadow: 0 0 0 1px #cdcdcd;
+    }
+  }
+
+  &--checkbox {
+    width: 30px;
+    height: 30px;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+
+    &:active {
+      opacity: 0.3;
+      border: 1px solid #cdcdcd;
+    }
+  }
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+  font-family: "Oswald", "Arial", sans-serif;
+  color: #444444;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.input-wrapper__label {
+  cursor: pointer;
+}

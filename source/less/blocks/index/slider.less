@@ -1,0 +1,55 @@
+.slider {
+  position: relative;
+  max-width: 280px;
+}
+
+.slider__list {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slider__item {
+  width: 100%;
+
+  &--after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 142px; // Отвечает за ширину картинки отнгосительно позиции ползунка resize
+    background-color: #eaeaea;
+    overflow: hidden;
+  }
+}
+
+.slider__ui-draggable {
+  position: absolute;
+  top: 0;
+  left: 138px;  // Отвечает за позиционирование ползунка
+  display: block;
+  width: 4px;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #666666;
+  border: none;
+  border-radius: 2px;
+  cursor: e-resize;
+}
+
+.slider__ui-draggable-arrows {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  background-image: url("../../../img/index-img/svg/slider-resize-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid #666666;
+  border-radius: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
