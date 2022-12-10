@@ -1,0 +1,140 @@
+.questionnaire {
+  max-width: 400px;
+  padding: 0;
+  font-family: "Oswald", "Arial", sans-serif;
+}
+
+.questionnaire__title {
+  max-width: 266px;
+  margin: 0;
+  margin-bottom: 39px;
+  padding: 0 20px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.questionnaire__fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+  margin-bottom: 23px;
+  padding: 0 20px;
+  border: none;
+  border-top: 2px solid #68b738;
+
+  &--second {
+    margin-bottom: 26px;
+    padding-bottom: 24px;
+    border-top: none;
+    border-bottom: 1px solid #d9d9d9;
+  }
+
+  &:last-of-type {
+    margin-bottom: 34px;
+  }
+}
+
+.questionnaire__legend {
+  position: relative;
+  max-width: 187px;
+  margin: 0;
+  margin-right: 20px;
+  margin-bottom: 35px;
+  padding: 0;
+  font-size: 24px;
+  line-height: 26px;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: -20px;
+    display: block;
+    width: 20px;
+    height: 100%;
+    background-color: #ffffff;
+    content: "";
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: -20px;
+    display: block;
+    width: 20px;
+    height: 100%;
+    background-color: #ffffff;
+    content: "";
+  }
+}
+
+.questionnaire__label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 14px;
+  color: #222222;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.questionnaire-input-wrapper {
+  flex-grow: 1;
+}
+
+.questionnaire__label-sign {
+  min-width: 94px;
+}
+
+.questionnaire__input {
+  flex-grow: 1;
+  margin-left: 13px;
+}
+
+.questionnaire__input-radio {
+  flex-grow: 0;
+  margin-right: 15px;
+}
+
+.questionnaire__textarea {
+  width: 280px;
+  min-height: 151px;
+  margin: 0;
+  padding: 10px 0;
+  padding-right: 12px;
+  padding-left: 15px;
+  font-family: "Oswald", "Arial", sans-serif;
+  color: #444444;
+  font-size: 16px;
+  line-height: 18px;
+  border: 1px solid #e7e7e7;
+  text-transform: uppercase;
+  resize: none;
+}
+
+.questionnaire__input-checkbox {
+  margin-right: 16px;
+}
+
+.questionnaire__button {
+  margin: 0 auto;
+  margin-bottom: 21px;
+}
+
+.questionnaire__footnote {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
