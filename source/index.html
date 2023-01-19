@@ -5,30 +5,42 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.css">
-  <title>CAT ENEGRY</title>
+  <link rel="preload" href="css/style.min.css" as="style">
+  <link rel="preload" href="fonts/lato/Lato-Regular.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/oswald/oswaldmedium.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/oswald/oswaldregular.woff2" as="font" crossorigin="anonymous">
+  <link rel="icon" href="favicon.ico"> <!-- 32×32 -->
+  <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/favicons/favicon-180x180.png"> <!-- 180×180 -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="./css/style.min.css">
+  <title>CAT ENERGY</title>
 </head>
 
 <body>
-  <header class="header">
+  <header class="header header--second">
     <nav class="header__navigation">
       <div class="header__logo logo">
         <a class="logo__link" href="index.html">
-          <img class="logo__icon" src="./img/index-img/svg/logo.svg" alt="логотип Cat Energy" width="191" height="38">
-          <span class="visually-hidden">Логотип CAT ENERGY.</span>
+          <picture>
+            <source media="(min-width: 660px)" srcset="./img/index-img/svg/logo-tablet.svg">
+            <img class="logo__icon" src="./img/index-img/svg/logo.svg" alt="логотип Cat Energy" width="191" height="38">
+          </picture>
         </a>
       </div>
       <button class="header__menu-button header__menu-button--close" type="button"></button>
       <div class="header__menu menu  menu--no-js">
         <ul class="menu__list">
           <li class="menu__item">
-            <a class="menu__link menu__link--curent" href="./index.html">главная</a>
+            <a class="menu__link menu__link--second menu__link--curent menu__link--curent-second" href="./index.html">
+              главная
+            </a>
           </li>
           <li class="menu__item">
-            <a class="menu__link" href="./catalog.html">каталог продукции</a>
+            <a class="menu__link menu__link--second" href="./catalog.html">каталог продукции</a>
           </li>
           <li class="menu__item">
-            <a class="menu__link" href="./form.html">подбор программы</a>
+            <a class="menu__link menu__link--second" href="./form.html">подбор программы</a>
           </li>
         </ul>
       </div>
@@ -37,18 +49,25 @@
   <main class="index">
     <h1 class="visually-hidden">Магазин CAT ENERGY.</h1>
     <section class="index__preview preview">
-      <h2 class="preview__title">Функциональное питание для котов</h2>
-      <span class="preview__sign">Занялся собой? Займись котом!</span>
-      <img class="preview__image" src="./img/index-img/preview-cats-food@1x.png"
-        alt="Кошачий корм-Cat energy с курицей." width="280" height="270">
-      <a class="preview__link button" href="./form.html">подобрать программу</a>
+      <div class="preview__container">
+        <h2 class="preview__title">Функциональное питание для котов</h2>
+        <span class="preview__sign">Занялся собой? Займись котом!</span>
+        <picture>
+          <source media="(min-width: 1080px)"
+            srcset="./img/index-img/preview-cats-food-desktop@1x.png 1x, ./img/index-img/preview-cats-food-desktop@2x.png 2x">
+          <img class="preview__image" src="./img/index-img/preview-cats-food@1x.png"
+            alt="Кошачий корм-Cat energy с курицей." width="280" height="270"
+            srcset="./img/index-img/preview-cats-food@2x.png 2x">
+        </picture>
+        <a class="preview__link button" href="./form.html">подобрать программу</a>
+      </div>
     </section>
     <section class="index__suggestions suggestions">
       <h2 class="visually-hidden">Предложения.</h2>
       <ul class="suggestions__list">
         <li class="suggestions__item">
           <img class="suggestions__icon" src="./img/index-img/svg/suggestions-icon-weight-loss.svg" alt="Стройная кошка"
-            width="50px" height="53px">
+            width="50" height="53">
           <h3 class="suggestions__item-title">похудение</h3>
           <p class="suggestions__item-description">
             Ваш кот весит больше собаки и почти утратил способность лазить по
@@ -56,9 +75,9 @@
           </p>
           <a class="suggestions__item-link" href="./catalog.html">каталог slim</a>
         </li>
-        <li class="suggestions__item">
+        <li class="suggestions__item suggestions__item--gain">
           <img class="suggestions__icon suggestions__icon--gain"
-            src="./img/index-img/svg/suggestions-icon-weight-gain.svg" alt="большая кошка" width="67px" height="53px">
+            src="./img/index-img/svg/suggestions-icon-weight-gain.svg" alt="большая кошка" width="67" height="53">
           <h3 class="suggestions__item-title">Набор массы</h3>
           <p class="suggestions__item-description">
             Заработать авторитет среди дворовых котов и даже собак? Серия Cat
@@ -97,7 +116,8 @@
             <img class="benefits__icon" src="./img/index-img/svg/benefits-icon-time.svg" alt="Иконка - время" width="60"
               height="60">
             <p class="benefits__description">
-              Уже через месяц наслаждайтесь изменениями к лучшему вашего питомца!
+              Уже через месяц наслаждайтесь изменениями к лучшему <br class="benefits__description-br-tablet"> вашего
+              питомца!
             </p>
           </li>
         </ul>
@@ -108,7 +128,8 @@
         <h2 class="example__title">Живой пример</h2>
         <p class="example__description">
           Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy
-          Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по
+          Slim. Отличный результат <br class="example__description-br"> без изнуряющих тренировок! При этом он не менял
+          своих привычек и по-прежнему спит по
           16 часов в день.
         </p>
         <ul class="example__footnote">
@@ -121,16 +142,26 @@
             <span class="example__footnote-sign">затрачено времени</span>
           </li>
         </ul>
-        <p class="example__expenses">Затраты на питание: 15 000 РУБ. </p>
+        <p class="example__expenses">
+          <span>Затраты на питание:</span> 15 000 РУБ.
+        </p>
         <div class="example__slider slider">
           <ul class="slider__list">
-            <li class="slider__item slider__item--after">
-              <img class="slider__image" src="./img/index-img/slider-fat-cat@1x.png" alt="пухлый кот" width="280"
-                height="256">
-            </li>
             <li class="slider__item slider__item--before">
-              <img class="slider__image" src="./img/index-img/slider-slender-cat@1x.png" alt="стройный кот" width="280"
-                height="256">
+              <picture>
+                <source media="(min-width:660px)"
+                  srcset="./img/index-img/slider-fat-cat-tablet@1x.png 1x, ./img/index-img/slider-fat-cat-tablet@2x.png 2x">
+                <img class="slider__image" src="./img/index-img/slider-fat-cat@1x.png"
+                  srcset="./img/index-img/slider-fat-cat@2x.png 2x" alt="пухлый кот" width="280" height="256">
+              </picture>
+            </li>
+            <li class="slider__item slider__item--after">
+              <picture>
+                <source media="(min-width:660px)"
+                  srcset="./img/index-img/slider-slender-cat-tablet@1x.png 1x, ./img/index-img/slider-slender-cat-tablet@2x.png 2x">
+                <img class="slider__image" src="./img/index-img/slider-slender-cat@1x.png"
+                  srcset="./img/index-img/slider-slender-cat@2x.png 2x" alt="стройный кот" width="280" height="256">
+              </picture>
             </li>
           </ul>
           <button class="slider__ui-draggable" type="button">
@@ -142,8 +173,9 @@
     </section>
     <section class="index__contacts contacts">
       <div class="contacts__text">
-        <h2 class="contacts__title">приглашаем к сотрудничеству дилеров!</h2>
-        <p class="contacts__addres">ул. Большая Конюшенная, д. 19/8 Санкт-Петербург</p>
+        <h2 class="contacts__title">приглашаем <br> к сотрудничеству дилеров!</h2>
+        <p class="contacts__addres">ул. Большая Конюшенная, д. 19/8 <span
+            class="contacts__addres-town">Санкт-Петербург</span></p>
       </div>
       <div class="contacts__maps">
         <iframe class="contacts__map"
@@ -155,54 +187,63 @@
     </section>
   </main>
   <footer class="footer">
-    <section class="footer__section-logo">
-      <h2 class="visually-hidden">Логотип компании.</h2>
-      <div class="footer__logo logo logo--footer">
-        <a class="logo__link" href="index.html">
-          <img class="logo__icon" src="./img/index-img/svg/footer-logo.svg" alt="логотип Cat Energy" width="128"
-            height="24">
-          <span class="visually-hidden">Логотип CAT ENERGY.</span>
-        </a>
-      </div>
-    </section>
-    <section class="footer__social social">
-      <h2 class="visually-hidden">Социальные сети компании.</h2>
-      <ul class="social__list">
-        <li class="social__item">
-          <a class="social__link" href="https://vk.com/htmlacademy">
-            <svg>
-              <use></use>
-            </svg>
-            <span class="visually-hidden">VK.</span>
+    <div class="footer__container">
+      <section class="footer__section-logo">
+        <h2 class="visually-hidden">Логотип компании.</h2>
+        <div class="footer__logo logo logo--footer">
+          <a class="logo__link" href="index.html">
+            <img class="logo__icon" src="./img/index-img/svg/footer-logo.svg" alt="логотип Cat Energy" width="128"
+              height="24">
+            <span class="visually-hidden">Логотип CAT ENERGY.</span>
           </a>
-        </li>
-        <li class="social__item">
-          <a class="social__link" href="https://www.youtube.com/user/htmlacademyru">
-            <svg>
-              <use></use>
+        </div>
+      </section>
+      <section class="footer__social social">
+        <h2 class="visually-hidden">Социальные сети компании.</h2>
+        <ul class="social__list">
+          <li class="social__item">
+            <a class="social__link" href="https://vk.com/htmlacademy">
+              <svg class="social__link-icon" width="28" height="22">
+                <use href="img/sprite.svg#social-icon-vkontakte"></use>
+              </svg>
+              <span class="visually-hidden">VK.</span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link" href="https://www.youtube.com/user/htmlacademyru">
+              <svg class="social__link-icon" width="24" height="19">
+                <use href="img/sprite.svg#social-icon-you-tube"></use>
+              </svg>
+              <span class="visually-hidden">YouTube.</span>
+            </a>
+          </li>
+          <li class="social__item">
+            <a class="social__link" href="https://t.me/htmlacademy">
+              <svg class="social__link-icon" width="20" height="17">
+                <use href="img/sprite.svg#social-icon-telegram"></use>
+              </svg>
+              <span class="visually-hidden">Telegram.</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section class="footer__copyright copyright">
+        <h2 class="visually-hidden">Компания-разработчик.</h2>
+        <div class="copyright__logo logo-copyright">
+          <a class="logo-copyright__link" href="#">
+            <svg class="logo-copyright__icon" width="113" height="37">
+              <use href="img/sprite.svg#logo-html"></use>
             </svg>
-            <span class="visually-hidden">YouTube.</span>
-          </a>
-        </li>
-        <li class="social__item">
-          <a class="social__link" href="https://t.me/htmlacademy">
-            <svg>
-              <use></use>
+            <svg class="logo-copyright__icon logo-copyright__icon--interactive" width="27" height="34">
+              <use href="img/sprite.svg#htmlacademy"></use>
             </svg>
-            <span class="visually-hidden">Telegram.</span>
+            <span class="visually-hidden">Логотип компании-разработчика-HTML Academy.</span>
           </a>
-        </li>
-      </ul>
-    </section>
-    <section class="footer__copyright copyright">
-      <h2 class="visually-hidden">Компания-разработчик.</h2>
-      <div class="copyright__logo logo-copyright">
-        <a class="logo-copyright__link" href="#">
-          <span class="visually-hiden">Логотип компании-разработчика-HTML Academy.</span>
-        </a>
-      </div>
-    </section>
+        </div>
+      </section>
+    </div>
   </footer>
+  <script src="js/menu.js"></script>
 </body>
 
 </html>

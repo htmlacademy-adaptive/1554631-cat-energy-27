@@ -1,0 +1,29 @@
+// Font family
+.oswald() {
+  font-family: @family-first, "Arial", sans-serif;
+}
+
+.lato() {
+  font-family: @family-second, "Arial", sans-serif;
+}
+
+// Font source sans
+.font-source(@size: @size-normal, @lh: 18px, @weight: 400) {
+  font-size: @size;
+  line-height: @lh;
+  font-weight: @weight;
+}
+
+// List style
+.list-style(@margin-list: 0, @padding-list: 0) {
+  margin: @margin-list;
+  padding: @padding-list;
+  list-style: none;
+}
+
+// Pseudo elements
+.pseudo(@display: block, @pos: absolute, @content:"") {
+  content: @content;
+  display: @display;
+  position: @pos;
+}

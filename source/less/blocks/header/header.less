@@ -1,17 +1,18 @@
 .header {
-  min-height: 65px;
+  min-height: 64px;
 }
 
 .header__navigation {
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  padding: 10px 0;
+  padding: 0;
+  padding-top: 10px;
 }
 
 .header__logo {
   margin-right: auto;
-  margin-bottom: 10px;
+  margin-bottom: 17px;
   margin-left: 20px;
 }
 
@@ -21,7 +22,7 @@
   width: 34px;
   height: 26px;
   margin-top: 8px;
-  margin-right: 20px;
+  margin-right: 14px;
   padding: 5px;
   border: none;
   background-color: transparent;
@@ -36,52 +37,102 @@
   }
 
   &::after {
-    position: absolute;
+    .pseudo();
     top: 5px;
     left: 5px;
-    display: block;
     width: 24px;
     height: 1.5px;
     background-color: #000000;
     box-shadow: 0 7.3px 0 0 #000000;
-    content: "";
   }
 
   &::before {
-    position: absolute;
+    .pseudo();
     bottom: 5px;
     left: 5px;
-    display: block;
     width: 24px;
     height: 1.5px;
     background-color: #000000;
-    content: "";
   }
 
   &--close {
     &::after {
-      position: absolute;
+      .pseudo();
       top: 50%;
       left: 0;
-      display: block;
       width: 24px;
       height: 1.5px;
       background-color: #000000;
       box-shadow: 0 0 0 0 #000000;
       transform: translateY(-50%) rotate(-45deg);
-      content: "";
     }
 
     &::before {
-      position: absolute;
+      .pseudo();
       bottom: 50%;
       left: 0;
-      display: block;
       width: 24px;
       height: 1.5px;
       background-color: #000000;
       transform: translateY(50%) rotate(45deg);
-      content: "";
     }
+  }
+}
+
+// Tablet-styles
+@media (min-width: @tablet_width) {
+  .header {
+    min-height: 78px;
+  }
+
+  .header__navigation {
+    align-items: flex-start;
+    row-gap: 20px;
+    padding: 0 30px;
+    padding-top: 0;
+  }
+
+  .header__logo {
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+
+  .header__menu-button {
+    display: none;
+  }
+
+  .header__menu {
+    margin-right: 3px;
+    margin-left: 20px;
+  }
+}
+
+// Desktop-styles
+@media (min-width: @desktop_width) {
+  .header {
+    position: relative;
+    min-height: 112px;
+
+    &--second::before {
+      .pseudo();
+      top: 0;
+      left: 50%;
+      width: 50%;
+      height: calc(100% + 4px);
+      background-color: @color-background-image;
+      z-index: -2;
+    }
+  }
+
+  .header__navigation {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 0 60px;
+    padding-top: 53px;
+  }
+
+  .header__menu {
+    margin-left: 40px;
   }
 }

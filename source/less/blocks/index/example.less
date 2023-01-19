@@ -4,7 +4,7 @@
   padding: 0 20px;
   padding-top: 25px;
   padding-bottom: 40px;
-  background-color: #eaeaea;
+  background-color: @color-background-defolt-second;
 }
 
 .example__container {
@@ -17,29 +17,29 @@
   margin: 0;
   margin-bottom: 40px;
   padding: 0;
-  font-family: "Oswald", "Arial", sans-serif;
-  font-weight: 400;
-  font-size: 36px;
-  line-height: 40px;
+  .oswald();
+  .font-source(@size-extralarge, 40px);
 }
 
 .example__description {
   margin: 0;
   margin-bottom: 20px;
   padding: 0;
-  font-size: 14px;
-  line-height: 18px;
-  color: #444444;
+  .font-source();
+  color: @color-text;
+}
+
+.example__description-br {
+  display: none;
 }
 
 .example__footnote {
   display: flex;
   flex-wrap: wrap;
-  min-height: 70px;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  padding: 0;
-  list-style: none;
+  gap: 32px;
+  min-height: 56px;
+  .list-style(0 auto);
+  margin-bottom: 34px;
 }
 
 .example__weight {
@@ -49,7 +49,6 @@
   align-items: center;
   width: 124px;
   min-height: 56px;
-  margin-right: 32px;
   border: 1px solid #cdcdcd;
   border-radius: 4px;
 }
@@ -57,10 +56,8 @@
 .example__footnote-title {
   margin: 0;
   padding: 0;
-  font-family: "Oswald", "Arial", sans-serif;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 24px;
+  .oswald();
+  .font-source(@size-big, 24px);
   text-align: center;
 }
 
@@ -78,12 +75,11 @@
 .example__footnote-sign {
   position: absolute;
   left: 50%;
-  top: 100%;
+  top: 100% + 8px;
   width: 77px;
   text-align: center;
-  color: #444444;
-  font-size: 12px;
-  line-height: 100%;
+  color: @color-text;
+  .font-source(@size-small, 100%);
   background-color: #eaeaea;
   transform: translateY(-50%) translateX(-50%);
 }
@@ -93,12 +89,133 @@
   margin: 0;
   margin-bottom: 20px;
   padding: 0;
-  font-family: "Oswald", "Arial", sans-serif;
-  font-size: 14px;
-  line-height: 20px;
+  .oswald();
+  .font-source(@size-normal, 20px);
   text-align: center;
+  text-transform: uppercase;
 }
 
 .example__slider {
   margin: 0 auto;
+}
+
+// Tablet-styles
+@media (min-width: @tablet_width) {
+  .example {
+    padding: 0 30px;
+    padding-top: 43px;
+    padding-bottom: 100px;
+    background-image: linear-gradient(0deg, rgba(234, 234, 234, 1) 462px, rgba(255, 255, 255, 1) 0);
+    border-top: 1px solid #e6e6e6;
+  }
+
+  .example__container {
+    max-width: 708px;
+  }
+
+  .example__title {
+    margin-bottom: 63px;
+    .font-source(@size-extralarge-tablet, 60px);
+  }
+
+  .example__description {
+    margin-bottom: 54px;
+    .font-source(@size-normal-tablet, 24px);
+  }
+
+  .example__footnote {
+    gap: 42px;
+    min-height: 72px;
+    margin: 0;
+    margin-bottom: 105px;
+  }
+
+  .example__weight {
+    width: 162px;
+    min-height: 72px;
+  }
+
+  .example__footnote-title {
+    .font-source(@size-big-tablet, 37px);
+  }
+
+  .example__time {
+    width: 162px;
+    min-height: 72px;
+  }
+
+  .example__footnote-sign {
+    top: 100%;
+    max-width: 141px;
+    width: max-content;
+    padding: 0 8px;
+    .font-source(@size-small-tablet, 100%);
+    background-color: #ffffff;
+  }
+
+  .example__expenses {
+    align-self: center;
+    max-width: 174px;
+    margin-bottom: 105px;
+    margin-left: auto;
+    .font-source(@size-extramidle-tablet, 29px);
+    text-align: right;
+  }
+}
+
+// Desktop-styles
+@media (min-width: @desktop_width) {
+  .example {
+    padding: 0 60px;
+    padding-top: 0;
+    padding-bottom: 70px;
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 1) 136px, rgba(234, 234, 234, 1) 0);
+    border-top: none;
+  }
+
+  .example__container {
+    display: grid;
+    grid-template-columns: minmax(300px, 436px) 560px;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1220px;
+  }
+
+  .example__title {
+    margin-bottom: 146px;
+  }
+
+  .example__description {
+    margin-bottom: 69px;
+  }
+
+  .example__description-br {
+    display: block;
+  }
+
+  .example__footnote {
+    margin-bottom: 55px;
+  }
+
+  .example__footnote-sign {
+    background-color: #eaeaea;
+  }
+
+  .example__expenses {
+    align-self: center;
+    max-width: 500px;
+    margin-bottom: 0;
+    margin-left: 0;
+    text-align: left;
+
+    & span {
+      margin-right: 63px;
+    }
+  }
+
+  .example__slider {
+    grid-column: 2/3;
+    grid-row: 1/10;
+  }
 }

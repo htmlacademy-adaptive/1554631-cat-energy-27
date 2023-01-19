@@ -7,9 +7,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  .list-style();
 }
 
 .suggestions__item {
@@ -22,7 +20,7 @@
   padding-top: 21px;
   padding-right: 20px;
   padding-left: 20px;
-  padding-bottom: 18px;
+  padding-bottom: 12px;
   background-color: #f2f2f2;
 
   &:last-child {
@@ -32,47 +30,46 @@
 
 .suggestions__icon {
   margin-right: 19px;
+  margin-left: 2px;
 
   &--gain {
+    margin-top: 2px;
     margin-right: 11px;
+    margin-left: -7px;
   }
 }
 
 .suggestions__item-title {
   max-width: 140px;
   margin: 0;
-  margin-top: 10px;
+  margin-top: 9px;
   margin-bottom: 29px;
   padding: 0;
-  font-family: "Oswald", "Arial", sans-serif;
-  font-weight: 400;
-  font-size: 24px;
-  line-height: 37px;
+  .oswald();
+  .font-source(@size-big, 37px);
   text-transform: uppercase;
 }
 
 .suggestions__item-description {
   margin: 0;
-  margin-bottom: 15px;
+  margin-bottom: 9px;
   padding: 0;
-  padding-bottom: 13px;
-  font-size: 14px;
-  line-height: 18px;
-  color: #444444;
+  padding-bottom: 22px;
+  .font-source();
+  color: @color-text;
   border-bottom: 1px solid #d9d9d9;
 }
 
 .suggestions__item-link {
   max-width: 240px;
-  min-width: 126px;
+  min-width: 133px;
   margin: 0;
   padding: 10px 0;
   padding-right: 39px;
-  font-family: "Oswald", "Arial", sans-serif;
-  font-size: 16px;
-  line-height: 16px;
-  color: #000000;
-  text-align: center;
+  .oswald();
+  .font-source(@size-midle, 16px);
+  color: @color-defolt;
+  text-align: left;
   text-transform: uppercase;
   text-decoration: none;
   background-image: url("../img/index-img/svg/suggestions-icon-arrow.svg");
@@ -81,5 +78,116 @@
 
   &:active {
     opacity: 0.6;
+  }
+}
+
+// Tablet-styles
+@media (min-width: @tablet_width) {
+  .suggestions {
+    padding: 0 30px;
+    padding-bottom: 0;
+  }
+
+  .suggestions__item {
+    min-width: 280px;
+    max-width: 708px;
+    margin-bottom: 29px;
+    padding-top: 77px;
+    padding-right: 316px;
+    padding-left: 53px;
+    padding-bottom: 48px;
+    background-image: url("../img/index-img/svg/suggestions-icon-weight-loss.svg");
+    background-repeat: no-repeat;
+    background-size: 200px 211px;
+    background-position: right 62px bottom 50% + 2px;
+
+    &--gain {
+      background-image: url("../../../img/index-img/svg/suggestions-icon-weight-gain.svg");
+      background-size: 268px 200px;
+      background-position: right 28px bottom 50% - 2px;
+    }
+  }
+
+  .suggestions__icon {
+    display: none;
+  }
+
+  .suggestions__item-title {
+    max-width: 210px;
+    margin: 0;
+    margin-top: 0;
+    margin-bottom: 24px;
+    .font-source(@size-king-tablet, 36px);
+  }
+
+  .suggestions__item-description {
+    margin: 0;
+    margin-bottom: 42px;
+    padding-bottom: 0;
+    .font-source(@size-normal-tablet, 24px);
+    color: @color-defolt;
+    border-bottom: none;
+  }
+
+  .suggestions__item-link {
+    min-width: 165px;
+    .font-source(@size-extramidle-tablet, 30px);
+  }
+}
+
+// Desktop-styles
+@media (min-width: @desktop_width) {
+  .suggestions {
+    padding: 0 60px;
+    padding-bottom: 0;
+  }
+
+  .suggestions__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 570px));
+    justify-content: center;
+    gap: 80px;
+    max-width: 1220px;
+    margin: 0 auto;
+  }
+
+  .suggestions__item {
+    align-items: center;
+    max-width: 570px;
+    margin-bottom: 0;
+    padding-top: 41px;
+    padding-right: 61px;
+    padding-bottom: 48px;
+    padding-left: 52px;
+    background-image: none;
+
+    &--gain {
+      background-image: none;
+    }
+  }
+
+  .suggestions__icon {
+    display: block;
+    width: 100px;
+    height: 106px;
+    margin-right: 63px;
+    margin-bottom: 39px;
+    margin-left: 0;
+
+    &--gain {
+      width: 134px;
+      height: 100px;
+      margin-top: 5px;
+      margin-right: 47px;
+      margin-left: -18px;
+    }
+  }
+
+  .suggestions__item-title {
+    margin-bottom: 34px;
+  }
+
+  .suggestions__item-description {
+    margin-bottom: 18px;
   }
 }
