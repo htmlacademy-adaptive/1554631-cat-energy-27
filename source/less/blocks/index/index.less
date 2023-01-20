@@ -1,11 +1,11 @@
 .index__preview {
   margin: 0;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 .index__suggestions {
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .index__benefits {
@@ -19,5 +19,34 @@
 
 .index__contacts {
   margin: 0;
-  margin-bottom: 39px;
+}
+
+// Tablet-styles
+@media (min-width: @tablet_width) {
+  .index__preview {
+    margin-bottom: 0;
+  }
+
+  .index__suggestions {
+    margin-bottom: 44px;
+  }
+
+  .index__benefits {
+    margin-bottom: 9px;
+  }
+}
+
+// Desktop-styles
+@media (min-width: @desktop_width) {
+  .index__preview {
+    margin-bottom: 81px;
+  }
+
+  .index__suggestions {
+    margin-bottom: 71px;
+  }
+
+  .index__benefits {
+    margin-bottom: 33px;
+  }
 }

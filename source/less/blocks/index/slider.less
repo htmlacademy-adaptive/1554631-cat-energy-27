@@ -5,20 +5,18 @@
 
 .slider__list {
   position: relative;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  .list-style();
 }
 
 .slider__item {
   width: 100%;
 
-  &--after {
+  &--before {
     position: absolute;
     top: 0;
     left: 0;
     max-width: 142px; // Отвечает за ширину картинки отнгосительно позиции ползунка resize
-    background-color: #eaeaea;
+    background-color: @color-background-defolt-second;
     overflow: hidden;
   }
 }
@@ -46,10 +44,45 @@
   width: 40px;
   height: 40px;
   background-color: #ffffff;
-  background-image: url("../../../img/index-img/svg/slider-resize-arrow.svg");
+  background-image: url("../img/index-img/svg/slider-resize-arrow.svg");
   background-repeat: no-repeat;
   background-position: center;
   border: 2px solid #666666;
   border-radius: 50%;
   transform: translateY(-50%) translateX(-50%);
+}
+
+
+// Tablet-styles
+@media (min-width: @tablet_width) {
+  .slider {
+    max-width: 560px;
+  }
+
+  .slider__item {
+    min-height: 512px;
+
+    &--before {
+      max-width: 278px; // Отвечает за ширину картинки отнгосительно позиции ползунка resize
+      background: linear-gradient(0deg, rgba(234, 234, 234, 1) 361px, rgba(255, 255, 255, 1) 151px);
+    }
+  }
+
+  .slider__image {
+    height: 512px;
+    width: 560px;
+  }
+
+  .slider__ui-draggable {
+    left: 278px;  // Отвечает за позиционирование ползунка
+  }
+}
+
+// Desktop-styles
+@media (min-width: @desktop_width) {
+  .slider__item {
+    &--before {
+      background: linear-gradient(0deg, rgba(234, 234, 234, 1) 376px, rgba(255, 255, 255, 1) 151px);
+    }
+  }
 }

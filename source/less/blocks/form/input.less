@@ -20,17 +20,16 @@
 
 .input {
   max-width: 100%;
+  min-width: 0;
   min-height: 45px;
   padding: 0 20px;
-  font-family: "Oswald", "Arial", sans-serif;
-  color: #444444;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 18px;
+  .oswald();
+  color: @color-text;
+  .font-source(@size-midle, 20px);
   border: 1px solid #d9d9d9;
 
   &::placeholder {
-    color: #444444;
+    color: @color-text;
     text-transform: uppercase;
   }
 
@@ -50,6 +49,10 @@
   &::-webkit-inner-spin-button,
   ::-webkit-outer-spin-button {
     display: none;
+  }
+
+  &--contacts {
+    padding-left: 12px;
   }
 
   &--radio {
@@ -94,16 +97,10 @@
   position: relative;
   display: flex;
   align-items: center;
-  margin-bottom: 14px;
-  font-family: "Oswald", "Arial", sans-serif;
-  color: #444444;
-  font-size: 16px;
-  line-height: 18px;
+  .oswald();
+  color: @color-text;
+  .font-source(@size-midle);
   text-transform: uppercase;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
 
   &:active {
     opacity: 0.3;
@@ -112,4 +109,56 @@
 
 .input-wrapper__label {
   cursor: pointer;
+}
+
+.input-wrapper__icon {
+  position: absolute;
+  top: calc(50% - 6px);
+  right: 14px;
+  stroke: #000000;
+
+  .input:focus-visible + & {
+    stroke: #68b738;
+  }
+
+  .input:invalid + & {
+    stroke: #ff8282;
+  }
+}
+
+// Tablet-styles
+@media (min-width: @tablet_width) {
+  .input {
+    max-width: 100%;
+    min-height: 52px;
+    .font-source(@size-extramidle-tablet, 30px);
+
+    &--radio {
+      width: 40px;
+      height: 40px;
+      min-height: 0;
+    }
+
+    &--contacts {
+      padding-left: 20px;
+    }
+
+    &--checkbox {
+      width: 40px;
+      height: 40px;
+      min-height: 0;
+    }
+  }
+
+  .input-wrapper {
+    .font-source(@size-extramidle-tablet, 30px);
+  }
+}
+
+// Desktop-styles
+@media (min-width: @desktop_width) {
+  .input-wrapper__icon {
+    top: calc(50% - 8px);
+    right: 15px;
+  }
 }
