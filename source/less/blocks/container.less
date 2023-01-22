@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+  max-width: 400px;
+}
+
+// Tablet-styles
+@media (min-width: @tablet_width) {
+  .container {
+    max-width: 708px;
+
+    &--form {
+      max-width: 630px;
+    }
+  }
+}
+
+// Desktop-styles
+@media (min-width: @desktop_width) {
+  .container {
+    max-width: 1220px;
+
+    &--form {
+      max-width: 1220px;
+    }
+  }
+}

@@ -11,7 +11,7 @@
   width: 100%;
   margin: 0;
   margin-bottom: 35px;
-  padding: 0;
+  padding: 0 20px;
   border: none;
 
   &::after {
@@ -103,10 +103,12 @@
 @media (min-width: @tablet_width) {
   .additional-goods__fieldset {
     margin-bottom: 80px;
-    padding-left: 30px;
+    padding: 0 30px;
   }
 
   .additional-goods__title {
+    position: relative;
+    left: -36px;
     max-width: 412px;
     padding: 0 36px;
     .font-source(@size-king-tablet, 36px);
@@ -167,21 +169,15 @@
     justify-content: center;
     align-items: flex-start;
     flex-direction: row;
-    padding: 0 60px;
   }
 
   .additional-goods__fieldset {
     margin-bottom: 81px;
-    padding-left: 0;
 
     &::after {
       width: calc(100% + 120px);
       left: -60px;
     }
-  }
-
-  .additional-goods__wrapper-title {
-    padding-left: 14px;
   }
 
   .additional-goods__cards {

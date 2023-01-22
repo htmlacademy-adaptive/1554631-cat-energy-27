@@ -19,11 +19,11 @@
 
 <body>
   <header class="header">
-    <nav class="header__navigation">
+    <nav class="header__navigation container">
       <div class="header__logo logo">
         <a class="logo__link" href="index.html">
           <picture>
-            <source media="(min-width: 660px)" srcset="./img/index-img/svg/logo-tablet.svg">
+            <source media="(min-width: 769px)" srcset="./img/index-img/svg/logo-tablet.svg">
             <img class="logo__icon" src="./img/index-img/svg/logo.svg" alt="логотип Cat Energy" width="191" height="38">
           </picture>
         </a>
@@ -45,52 +45,58 @@
     </nav>
   </header>
   <main class="form">
-    <h1 class="form__title">Подбор программы</h1>
+    <div class="form__title-container">
+      <h1 class="form__title container container--form">Подбор программы</h1>
+    </div>
     <section class="form__questionnaire questionnaire">
-      <h2 class="questionnaire__title">Заполните анкету, и мы подберем <br> программу питания для вашего кота</h2>
+      <div class="questionnaire__title-container container container--form">
+        <h2 class="questionnaire__title">Заполните анкету, и мы подберем <br> программу питания для вашего кота</h2>
+      </div>
       <form class="questionnaire__form" action="https://echo.htmlacademy.ru/" method="post">
-        <fieldset class="questionnaire__fieldset questionnaire__fieldset--second">
-          <legend class="visually-hidden">Персональные данные кота.</legend>
-          <div class="questionnaire__fieldset-container">
-            <label class="questionnaire__label">
-              ИМЯ:*
-              <input class="questionnaire__input input" type="text" name="name" placeholder="барсик">
-            </label>
-            <label class="questionnaire__label">
-              Вес (кг):*
-              <input class="questionnaire__input input" type="number" name="weight" placeholder="7">
-            </label>
-            <label class="questionnaire__label">
-              <span class="questionnaire__label-sign">Возраст (лет):</span>
-              <input class="questionnaire__input input" type="number" name="years" placeholder="7">
-            </label>
-          </div>
-        </fieldset>
-        <fieldset class="questionnaire__fieldset questionnaire__fieldset--second questionnaire__fieldset--radio">
-          <legend class="visually-hidden">Программа.</legend>
-          <div class="questionnaire__fieldset-container questionnaire__fieldset-container--radio">
-            <label class="questionnaire__label questionnaire__label--radio">
-              <input class="visually-hidden" type="radio" name="program" value="weight-loss">
-              <span class="questionnaire__input-radio input input--radio"></span>
-              похудение
-            </label>
-            <label class="questionnaire__label questionnaire__label--radio">
-              <input class="visually-hidden" type="radio" name="program" value="Mass-gain">
-              <span class="questionnaire__input-radio input input--radio"></span>
-              Набор массы
-            </label>
-            <label class="questionnaire__label questionnaire__label--radio">
-              <input class="visually-hidden" type="radio" name="program" value="I-don't`-know">
-              <span class="questionnaire__input-radio input input--radio"></span>
-              Не знаю (Нужен ваш совет)
-            </label>
-          </div>
-        </fieldset>
+        <div class="questionnaire__container container container--form">
+          <fieldset class="questionnaire__fieldset questionnaire__fieldset--second">
+            <legend class="visually-hidden">Персональные данные кота.</legend>
+            <div class="questionnaire__fieldset-container">
+              <label class="questionnaire__label">
+                ИМЯ:*
+                <input class="questionnaire__input input" type="text" name="name" placeholder="барсик">
+              </label>
+              <label class="questionnaire__label">
+                Вес (кг):*
+                <input class="questionnaire__input input" type="number" name="weight" placeholder="7">
+              </label>
+              <label class="questionnaire__label">
+                <span class="questionnaire__label-sign">Возраст (лет):</span>
+                <input class="questionnaire__input input" type="number" name="years" placeholder="7">
+              </label>
+            </div>
+          </fieldset>
+          <fieldset class="questionnaire__fieldset questionnaire__fieldset--second questionnaire__fieldset--radio">
+            <legend class="visually-hidden">Программа.</legend>
+            <div class="questionnaire__fieldset-container questionnaire__fieldset-container--radio">
+              <label class="questionnaire__label questionnaire__label--radio">
+                <input class="visually-hidden" type="radio" name="program" value="weight-loss">
+                <span class="questionnaire__input-radio input input--radio"></span>
+                похудение
+              </label>
+              <label class="questionnaire__label questionnaire__label--radio">
+                <input class="visually-hidden" type="radio" name="program" value="Mass-gain">
+                <span class="questionnaire__input-radio input input--radio"></span>
+                Набор массы
+              </label>
+              <label class="questionnaire__label questionnaire__label--radio">
+                <input class="visually-hidden" type="radio" name="program" value="I-don't`-know">
+                <span class="questionnaire__input-radio input input--radio"></span>
+                Не знаю (Нужен ваш совет)
+              </label>
+            </div>
+          </fieldset>
+        </div>
         <fieldset class="questionnaire__fieldset questionnaire__fieldset--contacts">
-          <div class="questionnaire__wrapper-legend">
+          <div class="questionnaire__wrapper-legend container container--form">
             <h3 class="questionnaire__legend">Контактные данные (владельца кота)</h3>
           </div>
-          <div class="questionnaire__fieldset-container">
+          <div class="questionnaire__fieldset-container container container--form">
             <div class="questionnaire-input-wrapper input-wrapper">
               <label class="input-wrapper__label" for="input--email">E-mail:*</label>
               <input class="questionnaire__input-contacts input input--contacts" id="input--email" type="email"
@@ -110,15 +116,15 @@
           </div>
         </fieldset>
         <fieldset class="questionnaire__fieldset">
-          <div class="questionnaire__wrapper-legend">
+          <div class="questionnaire__wrapper-legend container container--form">
             <h3 class="questionnaire__legend questionnaire__legend--comments">Комментарий</h3>
           </div>
-          <div class="questionnaire__fieldset-container">
+          <div class="questionnaire__fieldset-container container container--form">
             <textarea class="questionnaire__textarea" name="comments">Расскажите обо всех повaдках кота</textarea>
           </div>
         </fieldset>
         <fieldset class="questionnaire__fieldset">
-          <div class="questionnaire__wrapper-legend">
+          <div class="questionnaire__wrapper-legend container container--form">
             <h3 class="questionnaire__legend questionnaire__legend--checkbox">Дополнительно</h3>
           </div>
           <div class="questionnaire__fieldset-container questionnaire__fieldset-container--checkbox">
@@ -144,7 +150,7 @@
             </label>
           </div>
         </fieldset>
-        <div class="questionnaire__wrapper-button">
+        <div class="questionnaire__wrapper-button container container--form">
           <button class="questionnaire__button button" type="submit">отправить заявку</button>
           <span class="questionnaire__footnote">* — Обязательные поля</span>
         </div>
@@ -166,7 +172,7 @@
     </section>
   </main>
   <footer class="footer">
-    <div class="footer__container">
+    <div class="footer__container container">
       <section class="footer__section-logo">
         <h2 class="visually-hidden">Логотип компании.</h2>
         <div class="footer__logo logo logo--footer">

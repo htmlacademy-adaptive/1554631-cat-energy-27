@@ -1,7 +1,6 @@
 .preview {
+  padding: 0 20px;
   padding-top: 27px;
-  padding-right: 20px;
-  padding-left: 20px;
   color: @color-defolt-inverted;
   background-image: url("../img/index-img/preview-bg@1x.jpg"), linear-gradient(0deg, rgba(255, 255, 255, 1) 37%, rgba(98, 166, 58, 1) 0%);
   background-repeat: no-repeat;
@@ -11,6 +10,7 @@
 @media (min-resolution: 2dppx) {
   .preview {
     background-image: url("../img/index-img/preview-bg@2x.jpg"), linear-gradient(0deg, rgba(255, 255, 255, 1) 37%, rgba(98, 166, 58, 1) 0%);
+    background-size: contain;
   }
 }
 
@@ -18,6 +18,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
 }
 
 .preview__title {
@@ -51,9 +52,8 @@
 @media (min-width: @tablet_width) {
   .preview {
     min-height: 848px;
+    padding: 0 30px;
     padding-top: 38px;
-    padding-right: 30px;
-    padding-left: 118px;
     color: @color-defolt;
     background-image: url("../img/index-img/preview-bg-tablet@1x.jpg");
     background-position: bottom;
@@ -99,8 +99,6 @@
     position: relative;
     min-height: 582px;
     padding-top: 110px;
-    padding-right: 60px;
-    padding-left: 60px;
     background-image: none;
 
     &::before {
@@ -128,9 +126,7 @@
 
   .preview__container {
     position: relative;
-    max-width: 1220px;
     margin: 0 auto;
-    padding-left: 80px;
   }
 
   .preview__image {
