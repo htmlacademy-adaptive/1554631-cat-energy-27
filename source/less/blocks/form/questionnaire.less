@@ -1,14 +1,21 @@
 .questionnaire {
   max-width: 100%;
-  padding: 0;
+  padding: 0 20px;
   .oswald();
+}
+
+.questionnaire__container {
+  margin: 0 auto;
+}
+
+.questionnaire__title-container {
+  margin: 0 auto;
 }
 
 .questionnaire__title {
   max-width: 440px;
-  margin: 0 auto;
+  margin: 0;
   margin-bottom: 39px;
-  padding: 0 20px;
   .font-source();
   text-transform: uppercase;
 }
@@ -16,10 +23,14 @@
 .questionnaire__fieldset {
   min-inline-size: 0;
   width: 100%;
-  margin: 0;
+  margin: 0 auto;
   margin-bottom: 23px;
-  padding: 0 20px;
+  padding: 0;
   border: none;
+
+  &:last-of-type {
+    margin-bottom: 34px;
+  }
 
   &--second {
     margin-bottom: 22px;
@@ -27,15 +38,14 @@
   }
 
   &--radio {
-    margin-bottom: 26px;
     padding-top: 22px;
     padding-bottom: 18px;
     border-top: 1px solid #d9d9d9;
     border-bottom: 1px solid #d9d9d9;
-  }
 
-  &:last-of-type {
-    margin-bottom: 34px;
+    &:last-of-type {
+      margin-bottom: 26px;
+    }
   }
 }
 
@@ -43,8 +53,11 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  max-width: 400px;
   margin: 0 auto;
+
+  &--checkbox {
+    max-width: 400px;
+  }
 }
 
 .questionnaire__textarea {
@@ -64,12 +77,12 @@
 
 .questionnaire__wrapper-legend {
   position: relative;
-  width: 100%;
+  margin: 0 auto;
 
   &::after {
     .pseudo();
     top: 16px;
-    left: -50%;
+    left: -200%;
     width: 2000%;
     height: 2px;
     background-color: #68b738;
@@ -175,7 +188,8 @@
 
 .questionnaire__wrapper-button {
   width: 100%;
-  padding: 0 20px;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .questionnaire__button {
@@ -193,6 +207,17 @@
 
 // Tablet-styles
 @media (min-width: @tablet_width) {
+  .questionnaire {
+    padding: 0 30px;
+  }
+
+  .questionnaire__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
   .questionnaire__form {
     display: flex;
     flex-wrap: wrap;
@@ -200,15 +225,16 @@
   }
 
   .questionnaire__title {
-    max-width: 690px;
     margin-bottom: 66px;
-    padding: 0 30px;
     .font-source(@size-extramidle-tablet, 30px);
   }
 
   .questionnaire__fieldset {
     margin-bottom: 65px;
-    padding: 0 30px;
+
+    &:last-of-type {
+      margin-bottom: 54px;
+    }
 
     &--second {
       margin-bottom: 72px;
@@ -217,17 +243,16 @@
     }
 
     &--radio {
+      padding: 0;
       border: none;
-    }
 
-    &:last-of-type {
-      margin-bottom: 54px;
+      &:last-of-type {
+        margin-bottom: 74px;
+      }
     }
   }
 
   .questionnaire__fieldset-container {
-    max-width: 630px;
-
     &--radio {
       margin: 0 auto;
       padding: 25px 28px;
@@ -239,6 +264,7 @@
       grid-template-columns: repeat(auto-fit, minmax(calc(50% - 30px), calc(50% - 30px)));
       column-gap: 60px;
       row-gap: 32px;
+      max-width: 630px;
     }
   }
 
@@ -259,6 +285,8 @@
   }
 
   .questionnaire__legend {
+    position: relative;
+    left: -40px;
     max-width: 620px;
     margin-bottom: 76px;
     padding: 0 40px;
@@ -318,8 +346,6 @@
   .questionnaire__wrapper-button {
     display: flex;
     flex-wrap: wrap;
-    max-width: 690px;
-    padding: 0 30px;
   }
 
   .questionnaire__button {
@@ -341,21 +367,23 @@
 
 // Desktop-styles
 @media (min-width: @desktop_width) {
-  .questionnaire__title {
-    max-width: 1340px;
-    padding: 0 60px;
+  .questionnaire__container {
+    justify-content: space-between;
   }
 
   .questionnaire__fieldset {
     margin-bottom: 67px;
-    padding: 0 60px;
 
     &--second {
-      max-width: 649px;
+      max-width: 568px;
+      margin: 0;
       margin-bottom: 69px;
-      padding: 0 40px;
       padding-bottom: 0;
       border: none;
+    }
+
+    &--radio {
+      padding: 0;
     }
 
     &--contacts {
@@ -376,10 +404,6 @@
     }
   }
 
-  .questionnaire__wrapper-legend {
-    padding-left: 10px;
-  }
-
   .questionnaire-input-wrapper {
     width: 100%;
     max-width: 570px;
@@ -392,11 +416,6 @@
     &:nth-child(2n) {
       margin-right: 0;
     }
-  }
-
-  .questionnaire__wrapper-button {
-    max-width: 1340px;
-    padding: 0 60px;
   }
 
   .questionnaire__button {

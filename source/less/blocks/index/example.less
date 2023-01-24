@@ -10,7 +10,6 @@
 .example__container {
   display: flex;
   flex-wrap: wrap;
-  max-width: 400px;
 }
 
 .example__title {
@@ -109,10 +108,6 @@
     border-top: 1px solid #e6e6e6;
   }
 
-  .example__container {
-    max-width: 708px;
-  }
-
   .example__title {
     margin-bottom: 63px;
     .font-source(@size-extralarge-tablet, 60px);
@@ -166,7 +161,6 @@
 // Desktop-styles
 @media (min-width: @desktop_width) {
   .example {
-    padding: 0 60px;
     padding-top: 0;
     padding-bottom: 70px;
     background-image: linear-gradient(180deg, rgba(255, 255, 255, 1) 136px, rgba(234, 234, 234, 1) 0);

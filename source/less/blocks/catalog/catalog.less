@@ -2,11 +2,13 @@
   padding-top: 28px;
 }
 
+.catalog__title-wrapper {
+  padding: 0 20px;
+}
+
 .catalog__title {
-  max-width: 400px;
   margin: 0 auto;
   margin-bottom: 40px;
-  padding: 0 20px;
   .oswald();
   .font-source(@size-extralarge, 36px);
   text-align: left;
@@ -32,10 +34,12 @@
     padding-top: 38px;
   }
 
-  .catalog__title {
-    max-width: 768px;
-    margin-bottom: 82px;
+  .catalog__title-wrapper {
     padding: 0 30px;
+  }
+
+  .catalog__title {
+    margin-bottom: 82px;
     .font-source(@size-extralarge-tablet, 60px);
   }
 
@@ -55,9 +59,8 @@
   }
 
   .catalog__title {
-    max-width: 1340px;
+    position: relative;
     margin-bottom: 84px;
-    padding: 0 60px;
   }
 
   .catalog__products {
